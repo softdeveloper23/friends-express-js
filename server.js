@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 const friendsRouter = require('./routes/friends.router.js');
 const messagesRouter = require('./routes/messages.router.js');
@@ -14,7 +15,10 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.baseUrl}${req.url} ${delta}ms`);
 });
 
-// Use JSON
+// Express Static file middleware
+app.use('/site', express.static(path.join(__dirname, 'public')));
+
+// JSON Parsing middleware
 app.use(express.json());
 
 // Set endpoint for friends and messages
