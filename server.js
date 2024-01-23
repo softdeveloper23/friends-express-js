@@ -17,6 +17,10 @@ const friends = [
         id: 2,
         name: 'Nami',
     },
+    {
+        id: 3,
+        name: 'Roronoa Zoro',
+    },
 ];
 
 app.get('/friends', (req, res) => {
